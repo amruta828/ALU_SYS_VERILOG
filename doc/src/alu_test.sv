@@ -31,7 +31,7 @@ alu_transaction_1 trans1;
     env.build;
     begin
     trans1 = new();
-    env.gen.blueprint= trans1;
+    env.gen.t1= trans1;
     end
     env.start;
   endtask
@@ -49,7 +49,7 @@ alu_transaction_2 trans2;
     env.build;
     begin
     trans2 = new();
-    env.gen.blueprint= trans2;
+    env.gen.t1= trans2;
     end
     env.start;
   endtask
@@ -67,7 +67,7 @@ alu_transaction_3 trans3;
     env.build;
     begin
     trans3 = new();
-    env.gen.blueprint= trans3;
+    env.gen.t1= trans3;
     end
     env.start;
   endtask
@@ -85,7 +85,7 @@ alu_transaction_4 trans4;
     env.build;
     begin
     trans4 = new();
-env.gen.blueprint= trans4;
+env.gen.t1= trans4;
     end
     env.start;
   endtask
@@ -98,9 +98,9 @@ alu_transaction_1 trans1;
 alu_transaction_2 trans2;
 alu_transaction_3 trans3;
 alu_transaction_4 trans4;
-  function new(virtual alu_if mon_viff,
-               virtual alu_if drv_viff,
-               virtual alu_if ref_viff);
+  function new(virtual alu_interface mon_viff,
+               virtual alu_interface drv_viff,
+               virtual alu_interface ref_viff);
     super.new(mon_viff,drv_viff,ref_viff);
   endfunction
 
@@ -111,35 +111,34 @@ alu_transaction_4 trans4;
 
     begin
     trans = new();
-    env.gen.blueprint= trans;
+    env.gen.t1= trans;
     end
     env.start;
 
     begin
     trans1 = new();
-    env.gen.blueprint= trans1;
+    env.gen.t1= trans1;
     end
     env.start;
 
     begin
     trans2 = new();
-    env.gen.blueprint= trans2;
+    env.gen.t1= trans2;
     end
     env.start;
 
     begin
     trans3 = new();
-    env.gen.blueprint= trans3;
+    env.gen.t1= trans3;
     end
     env.start;
 
     begin
     trans4 = new();
-    env.gen.blueprint= trans4;
+    env.gen.t1= trans4;
     end
     env.start;
 
 
   endtask
 endclass
-
